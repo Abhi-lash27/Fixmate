@@ -1,3 +1,6 @@
+import 'package:fixmate/pages/community_forum_page.dart';
+import 'package:fixmate/pages/faq_page.dart';
+import 'package:fixmate/pages/feedback_page.dart';
 import 'package:flutter/material.dart';
 
 class HelpPage extends StatelessWidget {
@@ -24,19 +27,10 @@ class HelpPage extends StatelessWidget {
               subtitle: const Text('Find answers to common questions'),
               trailing: const Icon(Icons.question_answer),
               onTap: () {
-                // Navigate to FAQ page (to be implemented)
-              },
-            ),
-            const Divider(),
-
-            // Contact Support Section
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              title: const Text('Contact Support', style: TextStyle(fontSize: 18)),
-              subtitle: const Text('Get in touch with us for further help'),
-              trailing: const Icon(Icons.email),
-              onTap: () {
-                // Navigate to contact form or email support (to be implemented)
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FaqPage()),
+                );
               },
             ),
             const Divider(),
@@ -48,7 +42,10 @@ class HelpPage extends StatelessWidget {
               subtitle: const Text('Join discussions and ask questions'),
               trailing: const Icon(Icons.forum),
               onTap: () {
-                // Navigate to community forum (to be implemented)
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const CommunityForumPage()),
+                );
               },
             ),
             const Divider(),
@@ -72,12 +69,23 @@ class HelpPage extends StatelessWidget {
               subtitle: const Text('Let us know your thoughts and suggestions'),
               trailing: const Icon(Icons.feedback),
               onTap: () {
-                // Navigate to feedback form (to be implemented)
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FeedbackPage()),
+                );
               },
             ),
             const Divider(),
           ],
         ),
+      ),
+      // Chatbot button at the bottom right
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.deepPurple.shade800,
+        child: const Icon(Icons.chat,color: Colors.white,),
+        onPressed: () {
+          // Navigate to chatbot page or open chatbot (to be implemented)
+        },
       ),
     );
   }
