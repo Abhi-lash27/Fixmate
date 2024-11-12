@@ -1,5 +1,6 @@
+import 'package:fixmate/pages/AnimatedSplashScreen.dart';
 import 'package:fixmate/pages/featurestour_page.dart';
-import 'package:flutter/material.dart';  // Updated to WelcomePage
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,16 +12,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Fixmate',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-        textTheme: const TextTheme(
-          bodyLarge: TextStyle(color: Colors.white),
-          bodyMedium: TextStyle(color: Colors.white70),
-        ),
+        primarySwatch: Colors.deepPurple,
       ),
-      home: const FeatureTourPage(), // Set WelcomePage as the home screen
+      initialRoute: '/',  // Set the initial route to the animated splash screen
+      routes: {
+        '/': (context) => const AnimatedSplashScreen(),
+        '/features-tour': (context) => const FeatureTourPage(), // Your Features Tour Page
+      },
     );
   }
 }

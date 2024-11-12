@@ -26,7 +26,7 @@ class WelcomePage extends StatelessWidget {
               children: [
                 // Logo
                 Image.asset(
-                  'assets/images/samplelogo.png', // Path to your logo image
+                  'assets/images/logo.png', // Path to your logo image
                   width: 100,
                   height: 100,
                 ),
