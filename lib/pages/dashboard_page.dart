@@ -8,64 +8,68 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Dashboard',style: TextStyle(color: Colors.white),),
-        backgroundColor: Colors.deepPurple.shade800,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            // Welcome Text
-            const Padding(
-              padding: EdgeInsets.only(top: 20.0),
-              child: Text(
-                'Welcome to Fixmate!',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.deepPurple,
+    return WillPopScope(
+      onWillPop: () async => false, // Disable back navigation
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Dashboard', style: TextStyle(color: Colors.white)),
+          backgroundColor: Colors.deepPurple.shade800,
+          automaticallyImplyLeading: false, // Prevent back button from appearing
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              // Welcome Text
+              const Padding(
+                padding: EdgeInsets.only(top: 20.0),
+                child: Text(
+                  'Welcome to Fixmate!',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.deepPurple,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(height: 20), // Space
+              const SizedBox(height: 20), // Space
 
-            // Navigation Cards
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: 2,
-                crossAxisSpacing: 16.0,
-                mainAxisSpacing: 16.0,
-                children: [
-                  _buildCard(
-                    context: context,
-                    title: 'Device Diagnostics',
-                    icon: Icons.phone_android,
-                    onTap: () {
-                      _navigateToPage(context, const DeviceDiagnosticsPage());
-                    },
-                  ),
-                  _buildCard(
-                    context: context,
-                    title: 'Help',
-                    icon: Icons.help_outline,
-                    onTap: () {
-                      _navigateToPage(context, const HelpPage());
-                    },
-                  ),
-                  _buildCard(
-                    context: context,
-                    title: 'Settings',
-                    icon: Icons.settings,
-                    onTap: () {
-                      _navigateToPage(context, const SettingsPage());
-                    },
-                  ),
-                ],
+              // Navigation Cards
+              Expanded(
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 16.0,
+                  mainAxisSpacing: 16.0,
+                  children: [
+                    _buildCard(
+                      context: context,
+                      title: 'Device Diagnostics',
+                      icon: Icons.phone_android,
+                      onTap: () {
+                        _navigateToPage(context, const DeviceDiagnosticsPage());
+                      },
+                    ),
+                    _buildCard(
+                      context: context,
+                      title: 'Help',
+                      icon: Icons.help_outline,
+                      onTap: () {
+                        _navigateToPage(context, const HelpPage());
+                      },
+                    ),
+                    _buildCard(
+                      context: context,
+                      title: 'Settings',
+                      icon: Icons.settings,
+                      onTap: () {
+                        _navigateToPage(context, const SettingsPage());
+                      },
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
