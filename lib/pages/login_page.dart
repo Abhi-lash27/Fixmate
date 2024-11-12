@@ -1,7 +1,9 @@
+import 'package:fixmate/pages/forgotpassword.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'dashboard_page.dart'; // User Dashboard
 import 'admin_dashboard_page.dart'; // Admin Dashboard
+
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -29,8 +31,14 @@ class _SignInPageState extends State<SignInPage> {
         );
         _navigateToDashboard(context);
       } catch (e) {
+        String errorMessage = "Login failed: ${e.toString()}";
+        if (e.toString().contains('user-not-found')) {
+          errorMessage = "No user found for that email.";
+        } else if (e.toString().contains('wrong-password')) {
+          errorMessage = "Wrong password provided.";
+        }
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Login failed: ${e.toString()}")),
+          SnackBar(content: Text(errorMessage)),
         );
       }
     }
@@ -169,7 +177,11 @@ class _SignInPageState extends State<SignInPage> {
                   // Forgot Password Text
                   TextButton(
                     onPressed: () {
-                      // Handle Forgot Password
+                      // Navigate to Forgot Password Page
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+                      );
                     },
                     child: const Text(
                       'Forgot Password?',

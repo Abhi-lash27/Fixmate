@@ -17,17 +17,16 @@ class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
 
   Future<void> createUserDocument(User user) async {
-  DocumentSnapshot userDoc = await FirebaseFirestore.instance.collection('users').doc(user.uid).get();
-  if (!userDoc.exists) {
-    await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
-      'name': user.displayName ?? 'No Name',
-      'email': user.email ?? 'No Email',
-      'profileImageUrl': '', // Or use a default image URL
-      'role': 'user', // Set the role as 'user' by default
-    });
+    DocumentSnapshot userDoc = await FirebaseFirestore.instance.collection('users').doc(user.uid).get();
+    if (!userDoc.exists) {
+      await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
+        'name': user.displayName ?? 'No Name',
+        'email': user.email ?? 'No Email',
+        'profileImageUrl': '', // Or use a default image URL
+        'role': 'user', // Set the role as 'user' by default
+      });
+    }
   }
-}
-
 
   Future<void> _signUp() async {
     if (_formKey.currentState!.validate()) {
@@ -42,12 +41,14 @@ class _SignUpPageState extends State<SignUpPage> {
         User? user = _auth.currentUser;
         if (user != null) {
           await createUserDocument(user); // Create user document if not exists
-        }
+          // Send email verification
+          await user.sendEmailVerification();
 
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Account created successfully!")),
-        );
-        Navigator.pop(context); // Go back to the previous screen (Sign-in page)
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("Account created successfully! Please verify your email.")),
+          );
+          Navigator.pop(context); // Go back to the previous screen (Sign-in page)
+        }
       } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text("Sign up failed: ${e.toString()}")),
