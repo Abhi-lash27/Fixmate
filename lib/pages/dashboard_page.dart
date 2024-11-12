@@ -12,12 +12,10 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardPageState extends State<DashboardPage> {
-  // Index to track the current selected tab
   int _selectedIndex = 0;
 
-  // List of pages for the bottom navigation bar options
   final List<Widget> _pages = [
-    const HomePage(), // Home page content
+    const HomePage(),
     const DeviceDiagnosticsPage(),
     const HelpPage(),
     const SettingsPage(),
@@ -27,10 +25,10 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages[_selectedIndex], // Display the selected page
+      body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex, // The currently selected index
-        onTap: _onItemTapped, // Handle the tab change
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
@@ -60,10 +58,9 @@ class _DashboardPageState extends State<DashboardPage> {
     );
   }
 
-  // Method to handle tab item selection
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index; // Update the selected tab index
+      _selectedIndex = index;
     });
   }
 }
@@ -78,15 +75,105 @@ class HomePage extends StatelessWidget {
         title: const Text('Home', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.deepPurple.shade800,
       ),
-      body: const Center(
-        child: Text(
-          'Welcome to Fixmate!',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.deepPurple,
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Banner with Search Option
+            Container(
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.deepPurple.shade100,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Find your Device',
+                        prefixIcon: Icon(Icons.search, color: Colors.deepPurple.shade800),
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20),
+
+            // Features Section
+            const Text(
+              'Features',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.deepPurple),
+            ),
+            const SizedBox(height: 10),
+            Wrap(
+              spacing: 16,
+              runSpacing: 16,
+              children: [
+                _buildFeatureCard(Icons.phone_android, 'Device Diagnostics'),
+                _buildFeatureCard(Icons.help_outline, 'Help & FAQ'),
+                _buildFeatureCard(Icons.settings, 'Settings'),
+                _buildFeatureCard(Icons.person, 'Profile'),
+              ],
+            ),
+            const SizedBox(height: 20),
+
+            // Additional Information
+            const Text(
+              'Latest Updates',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.deepPurple),
+            ),
+            const SizedBox(height: 10),
+            Card(
+              elevation: 2,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Row(
+                  children: [
+                    Icon(Icons.update, color: Colors.deepPurple.shade800, size: 40),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            'App Version 1.0.1',
+                            style: TextStyle(fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(height: 4),
+                          Text('New features and improvements added to enhance your experience.'),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
+      ),
+    );
+  }
+
+  // Helper method to create feature cards
+  Widget _buildFeatureCard(IconData icon, String label) {
+    return Container(
+      width: 160,
+      padding: const EdgeInsets.all(12.0),
+      decoration: BoxDecoration(
+        color: Colors.deepPurple.shade50,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.deepPurple.shade100),
+      ),
+      child: Column(
+        children: [
+          Icon(icon, color: Colors.deepPurple.shade800, size: 40),
+          const SizedBox(height: 8),
+          Text(label, textAlign: TextAlign.center),
+        ],
       ),
     );
   }

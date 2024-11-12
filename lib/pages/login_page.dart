@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'dashboard_page.dart';
+import 'dashboard_page.dart'; // User Dashboard
+import 'admin_dashboard_page.dart'; // Admin Dashboard
 
 class SignInPage extends StatefulWidget {
   const SignInPage({super.key});
@@ -15,6 +16,10 @@ class _SignInPageState extends State<SignInPage> {
   final TextEditingController _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
+  // Variable to store selected role
+  String? _selectedRole = 'User';  // Default role is 'User'
+
+  // Method to handle sign in
   Future<void> _signIn() async {
     if (_formKey.currentState!.validate()) {
       try {
@@ -28,6 +33,21 @@ class _SignInPageState extends State<SignInPage> {
           SnackBar(content: Text("Login failed: ${e.toString()}")),
         );
       }
+    }
+  }
+
+  // Method to navigate to the correct dashboard
+  void _navigateToDashboard(BuildContext context) {
+    if (_selectedRole == 'Admin') {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const AdminDashboardPage()),
+      );
+    } else {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const DashboardPage()),
+      );
     }
   }
 
@@ -52,7 +72,7 @@ class _SignInPageState extends State<SignInPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Text(
-                    'Sign In to Fixmate..!',
+                    'Sign In to Fixmate..! ',
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
@@ -77,6 +97,52 @@ class _SignInPageState extends State<SignInPage> {
                     icon: Icons.lock_outline,
                     obscureText: true,
                   ),
+                  const SizedBox(height: 20),
+
+                  // Role Dropdown
+                  DropdownButtonFormField<String>(
+                    value: _selectedRole,
+                    onChanged: (value) {
+                      setState(() {
+                        _selectedRole = value;
+                      });
+                    },
+                    items: const [
+                      DropdownMenuItem(
+                        value: 'User',
+                        child: Text(
+                          'User',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                      DropdownMenuItem(
+                        value: 'Admin',
+                        child: Text(
+                          'Admin',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                    ],
+                    decoration: InputDecoration(
+                      labelText: 'Select Role',
+                      labelStyle: TextStyle(color: Colors.white70),
+                      filled: true,
+                      fillColor: Colors.white.withOpacity(0.2),
+                      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide.none,
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(color: Colors.white.withOpacity(0.5), width: 1),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30),
+                        borderSide: BorderSide(color: Colors.white, width: 2),
+                      ),
+                    ),
+                  ),
                   const SizedBox(height: 30),
 
                   // Sign In Button
@@ -84,8 +150,7 @@ class _SignInPageState extends State<SignInPage> {
                     onPressed: _signIn,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 16, horizontal: 80),
+                      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 80),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
@@ -152,24 +217,6 @@ class _SignInPageState extends State<SignInPage> {
         }
         return null;
       },
-    );
-  }
-
-  void _navigateToDashboard(BuildContext context) {
-    Navigator.pushReplacement(
-      context,
-      PageRouteBuilder(
-        pageBuilder: (context, animation, secondaryAnimation) =>
-            const DashboardPage(),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(0.0, 1.0);
-          const end = Offset.zero;
-          const curve = Curves.easeInOut;
-          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-          var offsetAnimation = animation.drive(tween);
-          return SlideTransition(position: offsetAnimation, child: child);
-        },
-      ),
     );
   }
 }

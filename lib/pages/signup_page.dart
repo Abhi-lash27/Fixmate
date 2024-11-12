@@ -17,15 +17,17 @@ class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
 
   Future<void> createUserDocument(User user) async {
-    DocumentSnapshot userDoc = await FirebaseFirestore.instance.collection('users').doc(user.uid).get();
-    if (!userDoc.exists) {
-      await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
-        'name': user.displayName ?? 'No Name',
-        'email': user.email ?? 'No Email',
-        'profileImageUrl': '', // Or use a default image URL
-      });
-    }
+  DocumentSnapshot userDoc = await FirebaseFirestore.instance.collection('users').doc(user.uid).get();
+  if (!userDoc.exists) {
+    await FirebaseFirestore.instance.collection('users').doc(user.uid).set({
+      'name': user.displayName ?? 'No Name',
+      'email': user.email ?? 'No Email',
+      'profileImageUrl': '', // Or use a default image URL
+      'role': 'user', // Set the role as 'user' by default
+    });
   }
+}
+
 
   Future<void> _signUp() async {
     if (_formKey.currentState!.validate()) {
