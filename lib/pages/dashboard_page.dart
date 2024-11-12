@@ -1,133 +1,90 @@
 import 'package:flutter/material.dart';
-import 'package:fixmate/pages/device_diagnostic_page.dart'; // Import for Device Diagnostic page
-import 'package:fixmate/pages/settings_page.dart'; // Import for Settings page
-import 'package:fixmate/pages/help_page.dart'; // Import for Help page
+import 'package:fixmate/pages/device_diagnostic_page.dart';
+import 'package:fixmate/pages/help_page.dart';
+import 'package:fixmate/pages/settings_page.dart';
+import 'package:fixmate/pages/profile_page.dart';
 
-class DashboardPage extends StatelessWidget {
+class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
 
   @override
+  _DashboardPageState createState() => _DashboardPageState();
+}
+
+class _DashboardPageState extends State<DashboardPage> {
+  // Index to track the current selected tab
+  int _selectedIndex = 0;
+
+  // List of pages for the bottom navigation bar options
+  final List<Widget> _pages = [
+    const HomePage(), // Home page content
+    const DeviceDiagnosticsPage(),
+    const HelpPage(),
+    const SettingsPage(),
+    const ProfilePage(),
+  ];
+
+  @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async => false, // Disable back navigation
-      child: Scaffold(
-        appBar: AppBar(
-          title: const Text('Dashboard', style: TextStyle(color: Colors.white)),
-          backgroundColor: Colors.deepPurple.shade800,
-          automaticallyImplyLeading: false, // Prevent back button from appearing
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              // Welcome Text
-              const Padding(
-                padding: EdgeInsets.only(top: 20.0),
-                child: Text(
-                  'Welcome to Fixmate!',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.deepPurple,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 20), // Space
-
-              // Navigation Cards
-              Expanded(
-                child: GridView.count(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 16.0,
-                  mainAxisSpacing: 16.0,
-                  children: [
-                    _buildCard(
-                      context: context,
-                      title: 'Device Diagnostics',
-                      icon: Icons.phone_android,
-                      onTap: () {
-                        _navigateToPage(context, const DeviceDiagnosticsPage());
-                      },
-                    ),
-                    _buildCard(
-                      context: context,
-                      title: 'Help',
-                      icon: Icons.help_outline,
-                      onTap: () {
-                        _navigateToPage(context, const HelpPage());
-                      },
-                    ),
-                    _buildCard(
-                      context: context,
-                      title: 'Settings',
-                      icon: Icons.settings,
-                      onTap: () {
-                        _navigateToPage(context, const SettingsPage());
-                      },
-                    ),
-                  ],
-                ),
-              ),
-            ],
+    return Scaffold(
+      body: _pages[_selectedIndex], // Display the selected page
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex, // The currently selected index
+        onTap: _onItemTapped, // Handle the tab change
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
           ),
-        ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.phone_android),
+            label: 'Device Diagnostics',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.help_outline),
+            label: 'Help',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+        selectedItemColor: Colors.deepPurple.shade800,
+        unselectedItemColor: Colors.deepPurple.shade400,
+        backgroundColor: Colors.white,
       ),
     );
   }
 
-  // Helper method for navigation with slide transition
-  void _navigateToPage(BuildContext context, Widget page) {
-    Navigator.push(
-      context,
-      PageRouteBuilder(
-        pageBuilder: (context, animation, secondaryAnimation) => page,
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          const begin = Offset(0.0, 1.0);
-          const end = Offset.zero;
-          const curve = Curves.easeInOut;
-          var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
-          var offsetAnimation = animation.drive(tween);
-          return SlideTransition(position: offsetAnimation, child: child);
-        },
-      ),
-    );
+  // Method to handle tab item selection
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index; // Update the selected tab index
+    });
   }
+}
 
-  // Helper method for creating navigation cards
-  Widget _buildCard({
-    required BuildContext context,
-    required String title,
-    required IconData icon,
-    required VoidCallback onTap,
-  }) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Card(
-        color: Colors.deepPurple.shade100,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        elevation: 5,
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                icon,
-                size: 40,
-                color: Colors.deepPurple.shade800,
-              ),
-              const SizedBox(height: 10),
-              Text(
-                title,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.deepPurple,
-                ),
-              ),
-            ],
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Home', style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.deepPurple.shade800,
+      ),
+      body: const Center(
+        child: Text(
+          'Welcome to Fixmate!',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.deepPurple,
           ),
         ),
       ),

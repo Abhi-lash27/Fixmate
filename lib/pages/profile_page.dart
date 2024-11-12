@@ -101,6 +101,19 @@ class _ProfilePageState extends State<ProfilePage> {
     }
   }
 
+  // Handle sign out logic
+  Future<void> _signOut() async {
+    try {
+      await _auth.signOut(); // Sign out the user
+      // After signing out, navigate to the sign-in page
+      Navigator.pushReplacementNamed(context, '/sign-in');
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Error signing out: ${e.toString()}")),
+      );
+    }
+  }
+
   @override
   void initState() {
     super.initState();
@@ -115,10 +128,7 @@ class _ProfilePageState extends State<ProfilePage> {
         actions: [
           IconButton(
             icon: const Icon(Icons.logout),
-            onPressed: () async {
-              await _auth.signOut();
-              Navigator.pushReplacementNamed(context, '/signIn');
-            },
+            onPressed: _signOut, // Call the sign-out method
           ),
         ],
       ),

@@ -150,10 +150,17 @@ class _SignUpPageState extends State<SignUpPage> {
     return TextFormField(
       controller: controller,
       obscureText: obscureText,
+      style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         hintText: hintText,
-        prefixIcon: Icon(icon),
-        border: OutlineInputBorder(),
+        hintStyle: TextStyle(color: Colors.white70),
+        prefixIcon: Icon(icon, color: Colors.white70),
+        filled: true,
+        fillColor: Colors.white.withOpacity(0.2),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(30),
+          borderSide: BorderSide.none,
+        ),
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {
