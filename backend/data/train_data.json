@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "brand": "Apple",
+    "model": "iPhone 13",
+    "age": 1,
+    "problems": [
+      {
+        "problem_description": "Screen is cracked or broken",
+        "solutions": [
+          {
+            "description": "Replace the screen with a compatible one.",
+            "steps": [
+              {
+                "description": "Power off the device and remove the SIM card.",
+                "photo": "https://example.com/images/iphone13_step1.jpg",
+                "video": null
+              },
+              {
+                "description": "Use a heat gun to soften the adhesive around the screen.",
+                "photo": "https://example.com/images/iphone13_step2.jpg",
+                "video": null
+              },
+              {
+                "description": "Carefully remove the screen using a suction cup and opening picks.",
+                "photo": "https://example.com/images/iphone13_step3.jpg",
+                "video": null
+              },
+              {
+                "description": "Replace the screen with a new one and secure it back in place.",
+                "photo": "https://example.com/images/iphone13_step4.jpg",
+                "video": "https://example.com/videos/iphone13_screen_replacement.mp4"
+              }
+            ]
+          },
+          {
+            "description": "Visit a repair shop for professional screen replacement.",
+            "steps": [
+              {
+                "description": "Find a trusted repair shop near your location.",
+                "photo": null,
+                "video": null
+              },
+              {
+                "description": "Hand over your device and explain the issue.",
+                "photo": null,
+                "video": null
+              }
+            ]
+          }
+        ],
+        "keywords": ["screen", "cracked", "broken", "replacement", "protector"],
+        "complexity": 4,
+        "cost": 4,
+        "time": 3,
+        "availability": 2
+      },
+      {
+        "problem_description": "Battery drains quickly",
+        "solutions": [
+          {
+            "description": "Check for background apps consuming power and close them.",
+            "steps": [
+              {
+                "description": "Go to Settings and open the Battery section.",
+                "photo": "https://example.com/images/galaxy_battery_settings.jpg",
+                "video": null
+              },
+              {
+                "description": "Identify and close high-consuming background apps.",
+                "photo": "https://example.com/images/galaxy_close_apps.jpg",
+                "video": null
+              }
+            ]
+          },
+          {
+            "description": "Reduce screen brightness and disable unnecessary features like Bluetooth or GPS.",
+            "steps": [
+              {
+                "description": "Adjust screen brightness in the notification panel.",
+                "photo": "https://example.com/images/galaxy_brightness.jpg",
+                "video": null
+              },
+              {
+                "description": "Turn off unused features such as Bluetooth and GPS.",
+                "photo": "https://example.com/images/galaxy_features.jpg",
+                "video": null
+              }
+            ]
+          }
+        ],
+        "keywords": ["battery", "drains", "power", "brightness", "replacement"],
+        "complexity": 2,
+        "cost": 3,
+        "time": 2,
+        "availability": 3
+      }
+    ]
+  }
+]
