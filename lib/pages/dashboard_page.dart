@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fixmate/pages/device_diagnostic_page.dart';
 import 'package:fixmate/pages/help_page.dart';
@@ -16,7 +17,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
   final List<Widget> _pages = [
     const HomePage(),
-    const DeviceDiagnosticsPage(),
+    const DeviceFormPage(),
     const HelpPage(),
     const SettingsPage(),
     const ProfilePage(),
@@ -65,8 +66,44 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  List<Map<String, dynamic>> brands = [];
+  bool _isLoading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchBrands();
+  }
+
+  // Fetch brands data from Firestore
+  Future<void> _fetchBrands() async {
+    try {
+      var querySnapshot = await _firestore.collection('brands').get();
+      setState(() {
+        brands = querySnapshot.docs.map((doc) {
+          return {
+            'name': doc['name'],
+            'models': doc['models'],
+          };
+        }).toList();
+        _isLoading = false;
+      });
+    } catch (e) {
+      setState(() {
+        _isLoading = false;
+      });
+      print('Error fetching data: $e');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -77,103 +114,73 @@ class HomePage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Banner with Search Option
-            Container(
-              padding: const EdgeInsets.all(16.0),
-              decoration: BoxDecoration(
-                color: Colors.deepPurple.shade100,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Row(
+        child: _isLoading
+            ? const Center(child: CircularProgressIndicator())
+            : Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // Banner with Search Option
+                  Container(
+                    padding: const EdgeInsets.all(16.0),
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple.shade100,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: TextField(
+                            decoration: InputDecoration(
+                              hintText: 'Find your Device',
+                              prefixIcon: Icon(Icons.search, color: Colors.deepPurple.shade800),
+                              border: InputBorder.none,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+
+                  // Features Section
+                  const Text(
+                    'Brands',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.deepPurple),
+                  ),
+                  const SizedBox(height: 10),
+                  // Brands List
                   Expanded(
-                    child: TextField(
-                      decoration: InputDecoration(
-                        hintText: 'Find your Device',
-                        prefixIcon: Icon(Icons.search, color: Colors.deepPurple.shade800),
-                        border: InputBorder.none,
-                      ),
+                    child: ListView.builder(
+                      itemCount: brands.length,
+                      itemBuilder: (context, brandIndex) {
+                        return Card(
+                          margin: const EdgeInsets.symmetric(vertical: 10),
+                          child: ExpansionTile(
+                            title: Text(brands[brandIndex]['name']),
+                            children: (brands[brandIndex]['models'] as List).map<Widget>((model) {
+                              return ExpansionTile(
+                                title: Text(model['name']),
+                                children: (model['repairGuides'] as List).map<Widget>((guide) {
+                                  return ExpansionTile(
+                                    title: Text(guide['issue']),
+                                    children: (guide['steps'] as List).map<Widget>((step) {
+                                      return ListTile(
+                                        title: Text(step['description']),
+                                        subtitle: step['photo'] != null ? Image.network(step['photo']) : null,
+                                        trailing: step['video'] != null ? const Icon(Icons.video_library) : null,
+                                      );
+                                    }).toList(),
+                                  );
+                                }).toList(),
+                              );
+                            }).toList(),
+                          ),
+                        );
+                      },
                     ),
                   ),
                 ],
               ),
-            ),
-            const SizedBox(height: 20),
-
-            // Features Section
-            const Text(
-              'Features',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.deepPurple),
-            ),
-            const SizedBox(height: 10),
-            Wrap(
-              spacing: 16,
-              runSpacing: 16,
-              children: [
-                _buildFeatureCard(Icons.phone_android, 'Device Diagnostics'),
-                _buildFeatureCard(Icons.help_outline, 'Help & FAQ'),
-                _buildFeatureCard(Icons.settings, 'Settings'),
-                _buildFeatureCard(Icons.person, 'Profile'),
-              ],
-            ),
-            const SizedBox(height: 20),
-
-            // Additional Information
-            const Text(
-              'Latest Updates',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.deepPurple),
-            ),
-            const SizedBox(height: 10),
-            Card(
-              elevation: 2,
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Row(
-                  children: [
-                    Icon(Icons.update, color: Colors.deepPurple.shade800, size: 40),
-                    const SizedBox(width: 16),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'App Version 1.0.1',
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(height: 4),
-                          Text('New features and improvements added to enhance your experience.'),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  // Helper method to create feature cards
-  Widget _buildFeatureCard(IconData icon, String label) {
-    return Container(
-      width: 160,
-      padding: const EdgeInsets.all(12.0),
-      decoration: BoxDecoration(
-        color: Colors.deepPurple.shade50,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.deepPurple.shade100),
-      ),
-      child: Column(
-        children: [
-          Icon(icon, color: Colors.deepPurple.shade800, size: 40),
-          const SizedBox(height: 8),
-          Text(label, textAlign: TextAlign.center),
-        ],
       ),
     );
   }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class FeedbackPage extends StatefulWidget {
   const FeedbackPage({super.key});
@@ -11,18 +13,37 @@ class _FeedbackPageState extends State<FeedbackPage> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _feedbackController = TextEditingController();
   String? _rating;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  // Method to handle form submission
-  void _submitFeedback() {
+  // Method to handle form submission and save feedback to Firestore
+  void _submitFeedback() async {
     if (_formKey.currentState!.validate()) {
-      // Here you would typically send the feedback to your backend or Firebase
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Thank you for your feedback!')),
-      );
-      _feedbackController.clear();
-      setState(() {
-        _rating = null;
-      });
+      try {
+        User? user = _auth.currentUser;
+        String userId = user != null ? user.uid : 'Anonymous';
+
+        await _firestore.collection('feedback').add({
+          'userId': userId,
+          'rating': _rating,
+          'feedback': _feedbackController.text.trim(),
+          'timestamp': FieldValue.serverTimestamp(),
+        });
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Thank you for your feedback!')),
+        );
+
+        // Clear the form after successful submission
+        _feedbackController.clear();
+        setState(() {
+          _rating = null;
+        });
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Failed to submit feedback: $e')),
+        );
+      }
     }
   }
 

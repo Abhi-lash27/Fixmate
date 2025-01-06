@@ -30,7 +30,7 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
       CurvedAnimation(parent: _controller, curve: Curves.easeIn),
     );
 
-    _logoPosition = Tween<Offset>(begin: Offset.zero, end: Offset(2.0, 0.0)).animate(
+    _logoPosition = Tween<Offset>(begin: Offset.zero, end: const Offset(2.0, 0.0)).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeIn),
     );
 
@@ -39,7 +39,7 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
       CurvedAnimation(parent: _controller, curve: Curves.easeIn),
     );
 
-    _textPosition = Tween<Offset>(begin: Offset(0.0, 0.0), end: Offset(2.0, 0.0)).animate(
+    _textPosition = Tween<Offset>(begin: const Offset(0.0, 0.0), end: const Offset(2.0, 0.0)).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeIn),
     );
 

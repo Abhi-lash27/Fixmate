@@ -45,7 +45,7 @@ class _SignUpPageState extends State<SignUpPage> {
           await user.sendEmailVerification();
 
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text("Account created successfully! Please verify your email.")),
+            const SnackBar(content: Text("Account created successfully! Please verify your email.")),
           );
           Navigator.pop(context); // Go back to the previous screen (Sign-in page)
         }
@@ -156,7 +156,7 @@ class _SignUpPageState extends State<SignUpPage> {
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(color: Colors.white70),
+        hintStyle: const TextStyle(color: Colors.white70),
         prefixIcon: Icon(icon, color: Colors.white70),
         filled: true,
         fillColor: Colors.white.withOpacity(0.2),

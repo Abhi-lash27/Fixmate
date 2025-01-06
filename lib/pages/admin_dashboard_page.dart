@@ -74,23 +74,23 @@ class AdminDashboardPage extends StatelessWidget {
           ],
         ),
       ),
-      body: Center(
+      body: const Center(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             children: [
-              const Icon(
+              Icon(
                 Icons.dashboard,
                 size: 100,
                 color: Colors.deepPurple,
               ),
-              const SizedBox(height: 20),
-              const Text(
+              SizedBox(height: 20),
+              Text(
                 'Welcome to the Admin Dashboard!',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 20),
-              const Text(
+              SizedBox(height: 20),
+              Text(
                 'Use the side navigation to manage guides, provide notifications, adjust settings, and view your profile.',
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16),

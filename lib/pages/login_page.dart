@@ -133,10 +133,10 @@ class _SignInPageState extends State<SignInPage> {
                     ],
                     decoration: InputDecoration(
                       labelText: 'Select Role',
-                      labelStyle: TextStyle(color: Colors.white70),
+                      labelStyle: const TextStyle(color: Colors.white70),
                       filled: true,
                       fillColor: Colors.white.withOpacity(0.2),
-                      contentPadding: EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide.none,
@@ -147,7 +147,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
-                        borderSide: BorderSide(color: Colors.white, width: 2),
+                        borderSide: const BorderSide(color: Colors.white, width: 2),
                       ),
                     ),
                   ),
@@ -180,7 +180,7 @@ class _SignInPageState extends State<SignInPage> {
                       // Navigate to Forgot Password Page
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+                        MaterialPageRoute(builder: (context) => const ForgotPasswordPage()),
                       );
                     },
                     child: const Text(
@@ -214,7 +214,7 @@ class _SignInPageState extends State<SignInPage> {
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(color: Colors.white70),
+        hintStyle: const TextStyle(color: Colors.white70),
         prefixIcon: Icon(icon, color: Colors.white70),
         filled: true,
         fillColor: Colors.white.withOpacity(0.2),

@@ -58,11 +58,11 @@ class _AddGuidePageState extends State<AddGuidePage> {
             child: Column(
               children: [
                 // Section 1: Guide Introduction
-                Text('Section 1: Introduction', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                const Text('Section 1: Introduction', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 10),
                 DropdownButtonFormField<String>(
                   value: _guideType,
-                  hint: Text('What type of guide is this?'),
+                  hint: const Text('What type of guide is this?'),
                   onChanged: (value) {
                     setState(() {
                       _guideType = value;
@@ -133,7 +133,7 @@ class _AddGuidePageState extends State<AddGuidePage> {
                 const SizedBox(height: 20),
 
                 // Section 2: Time Estimation & Difficulty Estimation
-                Text('Section 2: Time & Difficulty Estimation', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                const Text('Section 2: Time & Difficulty Estimation', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 10),
                 TextFormField(
                   decoration: const InputDecoration(labelText: 'Time Estimation (in hours)'),
@@ -141,7 +141,7 @@ class _AddGuidePageState extends State<AddGuidePage> {
                 const SizedBox(height: 10),
                 DropdownButtonFormField<String>(
                   value: _difficulty,
-                  hint: Text('Difficulty Estimation'),
+                  hint: const Text('Difficulty Estimation'),
                   onChanged: (value) {
                     setState(() {
                       _difficulty = value;
@@ -167,7 +167,7 @@ class _AddGuidePageState extends State<AddGuidePage> {
                 const SizedBox(height: 10),
 
                 // Tools Section
-                Text('Tools:', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                const Text('Tools:', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 10),
                 TextFormField(
                   decoration: const InputDecoration(labelText: 'Tool Name'),
@@ -185,7 +185,7 @@ class _AddGuidePageState extends State<AddGuidePage> {
                       return ListTile(
                         title: Text(tool),
                         trailing: IconButton(
-                          icon: Icon(Icons.remove),
+                          icon: const Icon(Icons.remove),
                           onPressed: () {
                             setState(() {
                               tools.remove(tool);
@@ -198,7 +198,7 @@ class _AddGuidePageState extends State<AddGuidePage> {
                 const SizedBox(height: 20),
 
                 // Section 3: Guide Steps
-                Text('Section 3: Guide Steps', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                const Text('Section 3: Guide Steps', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 const SizedBox(height: 10),
                 TextFormField(
                   decoration: const InputDecoration(labelText: 'Step Title for Step 1'),
@@ -232,7 +232,7 @@ class _AddGuidePageState extends State<AddGuidePage> {
                       // Handle the form submission logic here
                     }
                   },
-                  child: Text('Submit Guide'),
+                  child: const Text('Submit Guide'),
                 ),
               ],
             ),

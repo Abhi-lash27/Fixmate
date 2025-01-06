@@ -19,7 +19,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       try {
         await _auth.sendPasswordResetEmail(email: _emailController.text.trim());
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text("Password reset email sent!")),
+          const SnackBar(content: Text("Password reset email sent!")),
         );
         Navigator.pop(context);  // Return to the sign-in page
       } catch (e) {

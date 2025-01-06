@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fixmate/pages/editprofile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:fixmate/pages/AnimatedSplashScreen.dart';
 import 'package:fixmate/pages/featurestour_page.dart';
@@ -28,13 +29,17 @@ class MyApp extends StatelessWidget {
         '/features-tour': (context) => const FeatureTourPage(),
         '/sign-in': (context) => const SignInPage(),
         '/dashboard': (context) => const DashboardPage(),
+        '/edit-profile': (context) => const EditProfilePage(),
       },
+
     );
   }
 }
 
 // A widget that checks the user's authentication state
 class AuthWrapper extends StatelessWidget {
+  const AuthWrapper({super.key});
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<User?>(
