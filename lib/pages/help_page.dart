@@ -1,6 +1,7 @@
 import 'package:fixmate/pages/community_forum_page.dart';
 import 'package:fixmate/pages/faq_page.dart';
 import 'package:fixmate/pages/feedback_page.dart';
+import 'package:fixmate/pages/service_center_page.dart';
 import 'package:flutter/material.dart';
 
 class HelpPage extends StatelessWidget {
@@ -23,7 +24,8 @@ class HelpPage extends StatelessWidget {
             // FAQ Section
             ListTile(
               contentPadding: EdgeInsets.zero,
-              title: const Text('Frequently Asked Questions', style: TextStyle(fontSize: 18)),
+              title: const Text('Frequently Asked Questions',
+                  style: TextStyle(fontSize: 18)),
               subtitle: const Text('Find answers to common questions'),
               trailing: const Icon(Icons.question_answer),
               onTap: () {
@@ -38,13 +40,15 @@ class HelpPage extends StatelessWidget {
             // Community Forum Section
             ListTile(
               contentPadding: EdgeInsets.zero,
-              title: const Text('Community Forum', style: TextStyle(fontSize: 18)),
+              title:
+                  const Text('Community Forum', style: TextStyle(fontSize: 18)),
               subtitle: const Text('Join discussions and ask questions'),
               trailing: const Icon(Icons.forum),
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const CommunityForumPage()),
+                  MaterialPageRoute(
+                      builder: (context) => const CommunityForumPage()),
                 );
               },
             ),
@@ -53,11 +57,17 @@ class HelpPage extends StatelessWidget {
             // Troubleshooting Section
             ListTile(
               contentPadding: EdgeInsets.zero,
-              title: const Text('Troubleshooting', style: TextStyle(fontSize: 18)),
-              subtitle: const Text('Fix common issues with your device'),
+              title:
+                  const Text('Service Centers', style: TextStyle(fontSize: 18)),
+              subtitle: const Text('Find your nearby service centers'),
               trailing: const Icon(Icons.build),
               onTap: () {
-                // Navigate to troubleshooting page (to be implemented)
+                // Navigate to service center page (to be implemented)
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ServiceCenterPage()),
+                );
               },
             ),
             const Divider(),
@@ -82,7 +92,10 @@ class HelpPage extends StatelessWidget {
       // Chatbot button at the bottom right
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.deepPurple.shade800,
-        child: const Icon(Icons.chat,color: Colors.white,),
+        child: const Icon(
+          Icons.chat,
+          color: Colors.white,
+        ),
         onPressed: () {
           // Navigate to chatbot page or open chatbot (to be implemented)
         },
