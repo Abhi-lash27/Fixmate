@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  static const String apiUrl = 'http://192.168.67.208:5000/api/search'; // Replace with actual API URL
+  static const String apiUrl = 'http://192.168.53.208:5000/api/search'; // Replace with actual API URL
 
   static Future<Map<String, dynamic>?> searchDeviceRepairSolutions(
       String brand, String model, int age, String problem) async {
