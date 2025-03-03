@@ -64,8 +64,9 @@ class _DeviceFormPageState extends State<DeviceFormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Device Diagnostics'),
+        title: const Text('Device Diagnostics',style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.deepPurple.shade800,
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -139,7 +140,7 @@ class _DeviceFormPageState extends State<DeviceFormPage> {
                       ),
                       child: Text(
                         _isLoading ? 'Searching...' : 'Submit',
-                        style: const TextStyle(fontSize: 18),
+                        style: const TextStyle(fontSize: 18,color: Colors.white),
                       ),
                     ),
                   ),

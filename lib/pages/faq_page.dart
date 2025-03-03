@@ -7,32 +7,37 @@ class FaqPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Frequently Asked Questions'),
+        title: const Text('Frequently Asked Questions',style: TextStyle(
+            color: Colors.white)),
         backgroundColor: Colors.deepPurple.shade800,
-        centerTitle: true,
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: const [
           FaqTile(
-            question: "What is Fixmate?",
-            answer: "Fixmate is an app designed to help users diagnose mobile device issues and get repair suggestions using machine learning.",
+            question: "What is FixMate?",
+            answer: "FixMate is a mobile application that helps users diagnose device issues, provides repair suggestions using machine learning, and offers service center recommendations.",
           ),
           FaqTile(
-            question: "How do I use Fixmate?",
-            answer: "Simply sign in, select your device, and run a diagnostic test to get a repairability score and suggestions.",
+            question: "How does FixMate determine repairability scores?",
+            answer: "FixMate calculates repairability scores based on factors like problem complexity, cost, repair time, availability of parts, and device age using machine learning.",
           ),
           FaqTile(
-            question: "Can I use Fixmate for any device?",
-            answer: "Currently, Fixmate supports a variety of popular mobile devices. More models will be added in future updates.",
+            question: "Can I contribute solutions to FixMate?",
+            answer: "Yes! The FixMate community forum allows users to discuss issues, share solutions, and contribute new repair guides.",
           ),
           FaqTile(
-            question: "Is Fixmate free to use?",
-            answer: "Yes, Fixmate offers free basic diagnostics. Premium features may be added in future versions.",
+            question: "Does FixMate suggest nearby repair centers?",
+            answer: "Yes, FixMate provides a map feature to locate and recommend trusted service centers near you.",
           ),
           FaqTile(
-            question: "How can I contact support?",
-            answer: "You can contact support through the 'Help' section in the app or email support@fixmate.com.",
+            question: "Is FixMate free to use?",
+            answer: "Yes, FixMate offers free diagnostic tools and repair guides. Some advanced features may be introduced in future updates.",
+          ),
+          FaqTile(
+            question: "How can I get customer support?",
+            answer: "You can reach out to support through the app’s 'Help' section or email us at support@fixmate.com.",
           ),
         ],
       ),

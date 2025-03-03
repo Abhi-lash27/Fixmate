@@ -126,6 +126,7 @@ class _MapPageState extends State<MapPage> {
           ),
         ),
         backgroundColor: Colors.deepPurple.shade800, // FixMate primary color
+        iconTheme: const IconThemeData(color: Colors.white),
         elevation: 4.0,
         centerTitle: true,
       ),
@@ -181,7 +182,7 @@ class _MapPageState extends State<MapPage> {
                                 Text(
                                   'You are here',
                                   style: TextStyle(
-                                    fontSize: 12.0,
+                                    fontSize: 10.0,
                                     color: Colors.deepPurple.shade800, // Primary color
                                   ),
                                 ),
@@ -197,11 +198,11 @@ class _MapPageState extends State<MapPage> {
                           Marker(
                             point: LatLng(widget.latitude, widget.longitude),
                             width: 80,
-                            height: 80,
+                            height: 70,
                             builder: (context) => Column(
                               children: [
                                 Text(
-                                  widget.locationName,
+                                  'Your Destination',
                                   style: TextStyle(
                                     fontSize: 12.0,
                                     color: Colors.deepPurple.shade800, // Primary color

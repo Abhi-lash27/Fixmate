@@ -173,8 +173,10 @@ class _CommunityForumPageState extends State<CommunityForumPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Community Forum'),
+        title: const Text('Community Forum', style: TextStyle(
+            color: Colors.white,)),
         backgroundColor: Colors.deepPurple.shade800,
+        iconTheme: const IconThemeData(color: Colors.white),
         centerTitle: true,
       ),
       body: _isLoadingName
@@ -216,7 +218,7 @@ class _CommunityForumPageState extends State<CommunityForumPage> {
                                 borderRadius: BorderRadius.circular(30),
                               ),
                             ),
-                            child: const Text('Post Discussion'),
+                            child: const Text('Post Discussion',style: TextStyle(color: Colors.white),),
                           ),
                         ],
                       ),
@@ -309,7 +311,7 @@ class _CommunityForumPageState extends State<CommunityForumPage> {
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: Colors.deepPurple.shade800,
                                       ),
-                                      child: const Text('Reply'),
+                                      child: const Text('Reply', style: TextStyle(color: Colors.white),),
                                     ),
                                     if (_replyVisibility[postId] ?? false)
                                       StreamBuilder<QuerySnapshot>(

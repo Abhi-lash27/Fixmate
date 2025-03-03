@@ -1,0 +1,145 @@
+[
+    {
+      "brand": "Apple",
+      "locations": [
+        {
+          "name": "Apple Service Center - Bangalore",
+          "city": "Bangalore",
+          "latitude": 12.9716,
+          "longitude": 77.5946,
+          "contact": "+91-9876543210",
+          "address": "Brigade Road, MG Road, Bangalore, Karnataka"
+        },
+        {
+          "name": "Apple Service Center - Mumbai",
+          "city": "Mumbai",
+          "latitude": 19.0760,
+          "longitude": 72.8777,
+          "contact": "+91-9988776655",
+          "address": "Nariman Point, Mumbai, Maharashtra"
+        },
+        {
+          "name": "Apple Service Center - Delhi",
+          "city": "Delhi",
+          "latitude": 28.6139,
+          "longitude": 77.2090,
+          "contact": "+91-9876541234",
+          "address": "Connaught Place, New Delhi, Delhi"
+        }
+      ]
+    },
+    {
+      "brand": "Samsung",
+      "locations": [
+        {
+          "name": "Samsung Service Center - Chennai",
+          "city": "Chennai",
+          "latitude": 13.0827,
+          "longitude": 80.2707,
+          "contact": "+91-9123456789",
+          "address": "T Nagar, Chennai, Tamil Nadu"
+        },
+        {
+          "name": "Samsung Service Center - Hyderabad",
+          "city": "Hyderabad",
+          "latitude": 17.3850,
+          "longitude": 78.4867,
+          "contact": "+91-9876545678",
+          "address": "Banjara Hills, Hyderabad, Telangana"
+        },
+        {
+          "name": "Samsung Service Center - Pune",
+          "city": "Pune",
+          "latitude": 18.5204,
+          "longitude": 73.8567,
+          "contact": "+91-9988774455",
+          "address": "FC Road, Pune, Maharashtra"
+        }
+      ]
+    },
+    {
+      "brand": "Realme",
+      "locations": [
+        {
+          "name": "Realme Service Center - Kolkata",
+          "city": "Kolkata",
+          "latitude": 22.5726,
+          "longitude": 88.3639,
+          "contact": "+91-9876547890",
+          "address": "Park Street, Kolkata, West Bengal"
+        },
+        {
+          "name": "Realme Service Center - Jaipur",
+          "city": "Jaipur",
+          "latitude": 26.9124,
+          "longitude": 75.7873,
+          "contact": "+91-9876541234",
+          "address": "MI Road, Jaipur, Rajasthan"
+        }
+      ]
+    },
+    {
+      "brand": "OnePlus",
+      "locations": [
+        {
+          "name": "OnePlus Service Center - Ahmedabad",
+          "city": "Ahmedabad",
+          "latitude": 23.0225,
+          "longitude": 72.5714,
+          "contact": "+91-9876512345",
+          "address": "CG Road, Ahmedabad, Gujarat"
+        },
+        {
+          "name": "OnePlus Service Center - Indore",
+          "city": "Indore",
+          "latitude": 22.7196,
+          "longitude": 75.8577,
+          "contact": "+91-9876544321",
+          "address": "Vijay Nagar, Indore, Madhya Pradesh"
+        }
+      ]
+    },
+    {
+      "brand": "Vivo",
+      "locations": [
+        {
+          "name": "Vivo Service Center - Lucknow",
+          "city": "Lucknow",
+          "latitude": 26.8467,
+          "longitude": 80.9462,
+          "contact": "+91-9876543210",
+          "address": "Hazratganj, Lucknow, Uttar Pradesh"
+        },
+        {
+          "name": "Vivo Service Center - Chandigarh",
+          "city": "Chandigarh",
+          "latitude": 30.7333,
+          "longitude": 76.7794,
+          "contact": "+91-9876547890",
+          "address": "Sector 17, Chandigarh"
+        }
+      ]
+    },
+    {
+      "brand": "Xiaomi",
+      "locations": [
+        {
+          "name": "Xiaomi Service Center - Surat",
+          "city": "Surat",
+          "latitude": 21.1702,
+          "longitude": 72.8311,
+          "contact": "+91-9876542345",
+          "address": "City Light, Surat, Gujarat"
+        },
+        {
+          "name": "Xiaomi Service Center - Patna",
+          "city": "Patna",
+          "latitude": 25.5941,
+          "longitude": 85.1376,
+          "contact": "+91-9876567890",
+          "address": "Boring Road, Patna, Bihar"
+        }
+      ]
+    }
+  ]
+  

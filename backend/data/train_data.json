@@ -13,43 +13,28 @@
             "steps": [
               {
                 "description": "Power off the device and remove the SIM card.",
-                "photo": "https://example.com/images/iphone13_step1.jpg",
+                "photo": "https://www.howtogeek.com/wp-content/uploads/2020/03/samsung-galaxy-s20-power-menu-screenshot.jpg?trim=1,1&bg-color=000&pad=1,1",
                 "video": null
               },
               {
                 "description": "Use a heat gun to soften the adhesive around the screen.",
-                "photo": "https://example.com/images/iphone13_step2.jpg",
+                "photo": "https://i.ytimg.com/vi/QLjB62TzNtc/maxresdefault.jpg",
                 "video": null
               },
               {
                 "description": "Carefully remove the screen using a suction cup and opening picks.",
-                "photo": "https://example.com/images/iphone13_step3.jpg",
+                "photo": "https://guide-images.cdn.ifixit.com/igi/K5iUxKTkELONJBVf.large",
                 "video": null
               },
               {
                 "description": "Replace the screen with a new one and secure it back in place.",
-                "photo": "https://example.com/images/iphone13_step4.jpg",
+                "photo": "https://guide-images.cdn.ifixit.com/igi/VoZNhVF2Va3NVwit.large",
                 "video": "https://example.com/videos/iphone13_screen_replacement.mp4"
-              }
-            ]
-          },
-          {
-            "description": "Visit a repair shop for professional screen replacement.",
-            "steps": [
-              {
-                "description": "Find a trusted repair shop near your location.",
-                "photo": null,
-                "video": null
-              },
-              {
-                "description": "Hand over your device and explain the issue.",
-                "photo": null,
-                "video": null
               }
             ]
           }
         ],
-        "keywords": ["screen", "cracked", "broken", "replacement", "protector"],
+        "keywords": ["screen", "cracked", "broken", "replacement"],
         "complexity": 4,
         "cost": 4,
         "time": 3,
@@ -63,12 +48,12 @@
             "steps": [
               {
                 "description": "Go to Settings and open the Battery section.",
-                "photo": "https://example.com/images/galaxy_battery_settings.jpg",
+                "photo": "https://example.com/images/iphone13_battery_settings.jpg",
                 "video": null
               },
               {
                 "description": "Identify and close high-consuming background apps.",
-                "photo": "https://example.com/images/galaxy_close_apps.jpg",
+                "photo": "https://example.com/images/iphone13_close_apps.jpg",
                 "video": null
               }
             ]
@@ -78,18 +63,18 @@
             "steps": [
               {
                 "description": "Adjust screen brightness in the notification panel.",
-                "photo": "https://example.com/images/galaxy_brightness.jpg",
+                "photo": "https://example.com/images/iphone13_brightness.jpg",
                 "video": null
               },
               {
                 "description": "Turn off unused features such as Bluetooth and GPS.",
-                "photo": "https://example.com/images/galaxy_features.jpg",
+                "photo": "https://example.com/images/iphone13_features.jpg",
                 "video": null
               }
             ]
           }
         ],
-        "keywords": ["battery", "drains", "power", "brightness", "replacement"],
+        "keywords": ["battery", "drains", "power", "brightness"],
         "complexity": 2,
         "cost": 3,
         "time": 2,
@@ -137,7 +122,738 @@
         "cost": 2,
         "time": 2,
         "availability": 3
+      },
+      {
+        "problem_description": "Samsung Galaxy Not Charging",
+        "solutions": [
+          {
+            "description": "Power Source Too Weak",
+            "steps": [
+              {
+                "description": "Use a compatible charger. The amount of power the charger can output is strongly related to the rate a device can charge. Look for text on the wall block. Flip to whichever side has electrical data and look for key information.",
+                "photo": "https://example.com/images/samsung_overheat_step1.jpg",
+                "video": null
+              }
+            ]
+          },
+          {
+            "description": "Debris in the Charge Port",
+            "steps": [
+              {
+                "description": "Inspect your charge port. Use a flashlight to improve visibility.",
+                "photo": "https://example.com/images/samsung_update.jpg",
+                "video": null
+              },
+              {
+                "description":"Check the fit of your cable. Does the USB-C or micro USB plug sit flush with the bottom of the phone? It should. If it's loose, or only charges when you wiggle the cable, start with a cleaning.",
+                "photo": null,
+                "video": null
+              },
+              {
+                "description":"If there is debris in the port, use the custom cotton swab method or other non conductive probe to clear it out. You may need to shave down the toothpick for your custom swab so it fits into the port.",
+                "photo":null,
+                "video":null
+              },
+              {
+                "description":"Blowing compressed air into the port can free up any loosened bits.",
+                "photo":null,
+                "video":null
+              }
+            ]
+          }
+        ],
+        "keywords": ["not charging", "charging issue", "slow charging", "power","charge"],
+        "complexity": 2,
+        "cost": 2,
+        "time": 2,
+        "availability": 3
       }
     ]
-  }
+  },
+  {
+    "id": 3,
+    "brand": "OnePlus",
+    "model": "OnePlus 9 Pro",
+    "age": 1,
+    "problems": [
+      {
+        "problem_description": "Touchscreen not responding",
+        "solutions": [
+          {
+            "description": "Clean the screen and restart the device.",
+            "steps": [
+              {
+                "description": "Use a microfiber cloth to clean the screen surface.",
+                "photo": "https://example.com/images/oneplus9_clean_screen.jpg",
+                "video": null
+              },
+              {
+                "description": "Restart the device and check if the touchscreen responds.",
+                "photo": "https://example.com/images/oneplus9_restart.jpg",
+                "video": null
+              }
+            ]
+          }
+        ],
+        "keywords": ["touchscreen", "unresponsive", "screen not working"],
+        "complexity": 2,
+        "cost": 1,
+        "time": 1,
+        "availability": 4
+      },
+      {
+          "problem_description": "Samsung Galaxy Not Charging",
+          "solutions": [
+            {
+              "description": "Power Source Too Weak",
+              "steps": [
+                {
+                  "description": "Use a compatible charger. The amount of power the charger can output is strongly related to the rate a device can charge. Look for text on the wall block. Flip to whichever side has electrical data and look for key information.",
+                  "photo": "https://example.com/images/samsung_overheat_step1.jpg",
+                  "video": null
+                }
+              ]
+            },
+            {
+              "description": "Debris in the Charge Port",
+              "steps": [
+                {
+                  "description": "Inspect your charge port. Use a flashlight to improve visibility.",
+                  "photo": "https://example.com/images/samsung_update.jpg",
+                  "video": null
+                },
+                {
+                  "description":"Check the fit of your cable. Does the USB-C or micro USB plug sit flush with the bottom of the phone? It should. If it's loose, or only charges when you wiggle the cable, start with a cleaning.",
+                  "photo": null,
+                  "video": null
+                },
+                {
+                  "description":"If there is debris in the port, use the custom cotton swab method or other non conductive probe to clear it out. You may need to shave down the toothpick for your custom swab so it fits into the port.",
+                  "photo":null,
+                  "video":null
+                },
+                {
+                  "description":"Blowing compressed air into the port can free up any loosened bits.",
+                  "photo":null,
+                  "video":null
+                }
+              ]
+            }
+          ],
+          "keywords": ["not charging", "charging issue", "slow charging", "power","charge"],
+          "complexity": 2,
+          "cost": 2,
+          "time": 2,
+          "availability": 3
+        }
+    ]
+  },
+  {
+    "id": 4,
+    "brand": "Xiaomi",
+    "model": "Redmi Note 10",
+    "age": 2,
+    "problems": [
+      {
+        "problem_description": "Camera blurry or not focusing",
+        "solutions": [
+          {
+            "description": "Clean the camera lens and adjust focus settings.",
+            "steps": [
+              {
+                "description": "Use a dry microfiber cloth to wipe the camera lens.",
+                "photo": "https://example.com/images/redmi_camera_clean.jpg",
+                "video": null
+              },
+              {
+                "description": "Go to Camera Settings and reset focus settings.",
+                "photo": "https://example.com/images/redmi_camera_settings.jpg",
+                "video": null
+              }
+            ]
+          }
+        ],
+        "keywords": ["camera", "blurry", "focus"],
+        "complexity": 3,
+        "cost": 2,
+        "time": 2,
+        "availability": 3
+      },
+      {
+        "problem_description": "Samsung Galaxy Not Charging",
+        "solutions": [
+          {
+            "description": "Power Source Too Weak",
+            "steps": [
+              {
+                "description": "Use a compatible charger. The amount of power the charger can output is strongly related to the rate a device can charge. Look for text on the wall block. Flip to whichever side has electrical data and look for key information.",
+                "photo": "https://example.com/images/samsung_overheat_step1.jpg",
+                "video": null
+              }
+            ]
+          },
+          {
+            "description": "Debris in the Charge Port",
+            "steps": [
+              {
+                "description": "Inspect your charge port. Use a flashlight to improve visibility.",
+                "photo": "https://example.com/images/samsung_update.jpg",
+                "video": null
+              },
+              {
+                "description":"Check the fit of your cable. Does the USB-C or micro USB plug sit flush with the bottom of the phone? It should. If it's loose, or only charges when you wiggle the cable, start with a cleaning.",
+                "photo": null,
+                "video": null
+              },
+              {
+                "description":"If there is debris in the port, use the custom cotton swab method or other non conductive probe to clear it out. You may need to shave down the toothpick for your custom swab so it fits into the port.",
+                "photo":null,
+                "video":null
+              },
+              {
+                "description":"Blowing compressed air into the port can free up any loosened bits.",
+                "photo":null,
+                "video":null
+              }
+            ]
+          }
+        ],
+        "keywords": ["not charging", "charging issue", "slow charging", "power","charge"],
+        "complexity": 2,
+        "cost": 2,
+        "time": 2,
+        "availability": 3
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "brand": "Realme",
+    "model": "7 Pro",
+    "age": 2,
+    "problems": [
+      {
+        "problem_description": "Slow charging",
+        "solutions": [
+          {
+            "description": "Check the charger and cable for damage.",
+            "steps": [
+              {
+                "description": "Inspect the charging cable for visible damage.",
+                "photo": "https://example.com/images/realme7_cable.jpg",
+                "video": null
+              },
+              {
+                "description": "Try a different power adapter and check if the charging speed improves.",
+                "photo": "https://example.com/images/realme7_charger.jpg",
+                "video": null
+              }
+            ]
+          }
+        ],
+        "keywords": ["charging", "slow", "charger not working"],
+        "complexity": 2,
+        "cost": 1,
+        "time": 1,
+        "availability": 4
+      },
+      {
+        "problem_description": "Overheating issue",
+        "solutions": [
+          {
+            "description": "Close background apps and avoid heavy gaming.",
+            "steps": [
+              {
+                "description": "Go to Settings > Battery > Background Usage and limit unnecessary apps.",
+                "photo": "https://example.com/images/realme_battery_settings.jpg",
+                "video": null
+              }
+            ]
+          },
+          {
+            "description": "Replace the thermal paste at a service center.",
+            "steps": [
+              {
+                "description": "Visit an authorized Realme repair center.",
+                "photo": "https://example.com/images/realme_service_center.jpg",
+                "video": null
+              },
+              {
+                "description": "Technicians will open the phone and apply new thermal paste to the processor.",
+                "photo": "https://example.com/images/thermal_paste_application.jpg",
+                "video": null
+              }
+            ]
+          }
+        ],
+        "keywords": ["overheating", "hot device", "high temperature"],
+        "complexity": 3,
+        "cost": 2,
+        "time": 2,
+        "availability": 3
+      }
+    ]
+  },
+  {
+      "id": 6,
+      "brand": "Apple",
+      "model": "iPhone 12 Pro",
+      "age": 3,
+      "problems": [
+        {
+          "problem_description": "Severe Water Damage",
+          "solutions": [
+            {
+              "description": "Attempt DIY Drying Methods (Low Success Rate)",
+              "steps": [
+                {
+                  "description": "Turn off the device immediately (if not already dead).",
+                  "photo": null,
+                  "video": null
+                },
+                {
+                  "description": "Remove the SIM card and any accessories.",
+                  "photo": null,
+                  "video": null
+                },
+                {
+                  "description": "Dry the phone using silica gel packets (not rice).",
+                  "photo": "https://example.com/images/drying_phone.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Leave it for at least 48 hours before attempting to power it on.",
+                  "photo": null,
+                  "video": null
+                }
+              ]
+            },
+            {
+              "description": "Professional Repair - Motherboard & Battery Replacement",
+              "steps": [
+                {
+                  "description": "Open the device using a heat gun.",
+                  "photo": "https://example.com/images/opening_device.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Disconnect and remove the battery.",
+                  "photo": "https://example.com/images/remove_battery.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Inspect and clean the motherboard using isopropyl alcohol.",
+                  "photo": "https://example.com/images/clean_motherboard.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Check for corrosion and replace damaged components.",
+                  "photo": null,
+                  "video": null
+                },
+                {
+                  "description": "Reassemble and test.",
+                  "photo": null,
+                  "video": null
+                }
+              ],
+              "tools": [
+                { "name": "Heat Gun", "price": "$20", "link": "https://example.com/tools/heat-gun" },
+                { "name": "Screwdriver Set", "price": "$15", "link": "https://example.com/tools/screwdriver-set" },
+                { "name": "Isopropyl Alcohol (99%)", "price": "$8", "link": "https://example.com/tools/isopropyl-alcohol" },
+                { "name": "Microscope", "price": "$50", "link": "https://example.com/tools/microscope" },
+                { "name": "Replacement Battery", "price": "$40", "link": "https://example.com/tools/replacement-battery" },
+                { "name": "Replacement Logic Board", "price": "$150", "link": "https://example.com/tools/logic-board" }
+              ]
+            }
+          ],
+          "keywords": ["water damage", "liquid damage", "phone not turning on"],
+          "complexity": 5,
+          "cost": 5,
+          "time": 5,
+          "availability": 2
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "brand": "Samsung",
+      "model": "Galaxy S22 Ultra",
+      "age": 1,
+      "problems": [
+        {
+          "problem_description": "Broken Back Glass (Non-Removable)",
+          "solutions": [
+            {
+              "description": "DIY Glass Replacement (Risky)",
+              "steps": [
+                {
+                  "description": "Use a heat gun to soften the adhesive around the back panel.",
+                  "photo": "https://example.com/images/heat_glass.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Use suction cups and a plastic tool to remove the broken glass.",
+                  "photo": "https://example.com/images/remove_glass.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Clean the old adhesive and apply a new one.",
+                  "photo": "https://example.com/images/clean_adhesive.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Place the new back panel and apply pressure to secure it.",
+                  "photo": "https://example.com/images/install_new_glass.jpg",
+                  "video": null
+                }
+              ]
+            },
+            {
+              "description": "Professional Repair",
+              "steps": [
+                {
+                  "description": "Technician will use a laser machine to remove the adhesive safely.",
+                  "photo": "https://example.com/images/laser_removal.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Replace with an original back panel.",
+                  "photo": "https://example.com/images/new_glass_panel.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Ensure water resistance is maintained using factory-grade adhesive.",
+                  "photo": null,
+                  "video": null
+                }
+              ],
+              "tools": [
+                { "name": "Heat Gun or Laser Machine", "price": "$50", "link": "https://example.com/tools/laser-machine" },
+                { "name": "Opening Picks & Suction Cups", "price": "$10", "link": "https://example.com/tools/opening-tools" },
+                { "name": "Adhesive Cleaner", "price": "$5", "link": "https://example.com/tools/adhesive-cleaner" },
+                { "name": "Replacement Glass Panel", "price": "$40", "link": "https://example.com/tools/replacement-glass" }
+              ]
+            }
+          ],
+          "keywords": ["back glass", "broken glass", "replacement"],
+          "complexity": 4,
+          "cost": 4,
+          "time": 4,
+          "availability": 2
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "brand": "OnePlus",
+      "model": "Nord CE 2",
+      "age": 2,
+      "problems": [
+        {
+          "problem_description": "Face ID / Fingerprint Sensor Not Working",
+          "solutions": [
+            {
+              "description": "Software Fixes",
+              "steps": [
+                {
+                  "description": "Check if software updates are available.",
+                  "photo": null,
+                  "video": null
+                },
+                {
+                  "description": "Reset Face ID / Fingerprint and reconfigure it.",
+                  "photo": "https://example.com/images/reset_fingerprint.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Boot into Safe Mode and check if the sensor works.",
+                  "photo": null,
+                  "video": null
+                }
+              ]
+            },
+            {
+              "description": "Hardware Replacement",
+              "steps": [
+                {
+                  "description": "Disassemble the phone and access the biometric sensor.",
+                  "photo": "https://example.com/images/open_device.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Disconnect and clean the sensor contacts.",
+                  "photo": "https://example.com/images/clean_sensor.jpg",
+                  "video": null
+                },
+                {
+                  "description": "If still not working, replace the sensor with a compatible one.",
+                  "photo": "https://example.com/images/replace_sensor.jpg",
+                  "video": null
+                }
+              ],
+              "tools": [
+                { "name": "Screwdriver Set", "price": "$10", "link": "https://example.com/tools/screwdrivers" },
+                { "name": "Isopropyl Alcohol", "price": "$8", "link": "https://example.com/tools/isopropyl" },
+                { "name": "Replacement Sensor", "price": "$30", "link": "https://example.com/tools/fingerprint-sensor" }
+              ]
+            }
+          ],
+          "keywords": ["fingerprint","sensor","not working", "Face ID", "biometric issue"],
+          "complexity": 4,
+          "cost": 3,
+          "time": 3,
+          "availability": 1
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "brand": "Vivo",
+      "model": "Vivo V21",
+      "age": 2,
+      "problems": [
+        {
+          "problem_description": "Screen Freezing Frequently",
+          "solutions": [
+            {
+              "description": "Basic Fixes",
+              "steps": [
+                {
+                  "description": "Restart the device and check if the issue persists.",
+                  "photo": "https://example.com/images/vivo_restart.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Clear cache by going to Settings > Storage > Cached Data.",
+                  "photo": "https://example.com/images/vivo_clear_cache.jpg",
+                  "video": null
+                }
+              ]
+            },
+            {
+              "description": "Factory Reset",
+              "steps": [
+                {
+                  "description": "Go to Settings > System > Reset Options.",
+                  "photo": "https://example.com/images/vivo_factory_reset.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Select 'Erase all data' and confirm.",
+                  "photo": null,
+                  "video": null
+                }
+              ]
+            }
+          ],
+          "keywords": ["screen freeze", "lagging", "not responding"],
+          "complexity": 3,
+          "cost": 2,
+          "time": 2,
+          "availability": 4
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "brand": "Oppo",
+      "model": "Oppo Reno 8",
+      "age": 1,
+      "problems": [
+        {
+          "problem_description": "Battery Draining Too Fast",
+          "solutions": [
+            {
+              "description": "Optimize Battery Usage",
+              "steps": [
+                {
+                  "description": "Check Battery Usage in Settings and identify high-draining apps.",
+                  "photo": "https://example.com/images/oppo_battery_usage.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Enable Battery Saver mode.",
+                  "photo": "https://example.com/images/oppo_battery_saver.jpg",
+                  "video": null
+                }
+              ]
+            },
+            {
+              "description": "Replace the Battery",
+              "steps": [
+                {
+                  "description": "Turn off the device and remove the back panel.",
+                  "photo": "https://example.com/images/oppo_remove_back.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Disconnect the old battery and install a new one.",
+                  "photo": "https://example.com/images/oppo_replace_battery.jpg",
+                  "video": null
+                }
+              ],
+              "tools": [
+                { "name": "Screwdriver Set", "price": "$10", "link": "https://example.com/tools/screwdriver" },
+                { "name": "Replacement Battery", "price": "$40", "link": "https://example.com/tools/oppo-battery" }
+              ]
+            }
+          ],
+          "keywords": ["battery drain", "charging issue", "fast discharge"],
+          "complexity": 3,
+          "cost": 3,
+          "time": 2,
+          "availability": 3
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "brand": "Motorola",
+      "model": "G45",
+      "age": 3,
+      "problems": [
+        {
+          "problem_description": "Speaker Not Working",
+          "solutions": [
+            {
+              "description": "Basic Troubleshooting",
+              "steps": [
+                {
+                  "description": "Check if Do Not Disturb mode is enabled and disable it.",
+                  "photo": "https://example.com/images/moto_dnd.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Clean the speaker grills with a soft brush.",
+                  "photo": "https://example.com/images/moto_clean_speaker.jpg",
+                  "video": null
+                }
+              ]
+            },
+            {
+              "description": "Replace the Speaker Module",
+              "steps": [
+                {
+                  "description": "Disassemble the device using a screwdriver set.",
+                  "photo": "https://example.com/images/moto_open_device.jpg",
+                  "video": null
+                },
+                {
+                  "description": "Remove the faulty speaker and install a new one.",
+                  "photo": "https://example.com/images/moto_replace_speaker.jpg",
+                  "video": null
+                }
+              ],
+              "tools": [
+                { "name": "Precision Screwdriver", "price": "$12", "link": "https://example.com/tools/screwdriver" },
+                { "name": "Replacement Speaker", "price": "$25", "link": "https://example.com/tools/moto-speaker" }
+              ]
+            }
+          ],
+          "keywords": ["speaker issue", "no sound", "low volume"],
+          "complexity": 4,
+          "cost": 3,
+          "time": 3,
+          "availability": 2
+        },
+        {
+          "problem_description": "Screen Protector Replacement",
+          "solutions": [
+            {
+              "description": "Secure your phone",
+              "steps": [
+                {
+                  "description": "Completely open your phone and unplug any cables.",
+                  "photo":"https://guide-images.cdn.ifixit.com/igi/RguHFSAbuJj3NlkK.200x150"
+                },
+                {
+                  "description":"Create a shim, In this step, you'll create a shim to separate the old screen protector from your phone's screen.",
+                  "photo":"https://guide-images.cdn.ifixit.com/igi/NOQBgImMcxq2VWvw.200x150"
+                },
+
+                {
+                  "description":"Separate the screen protector from the screen,Slide the sharpest corner of your shim under one of the top corners of your screen protector.",
+                  "photo":"https://guide-images.cdn.ifixit.com/igi/pLKwZFDgYEcgZVfR.large"
+                },
+                {
+                  "description":"Grip the screen protector, Insert your shim deeper under the corner of the protector until you can grip it with your fingers.",
+                  "photo":"Ihttps://guide-images.cdn.ifixit.com/igi/aKeeC12tUlfKRSfI.200x150"
+                },
+                {
+                  "description":"Remove the screen protector, Peel and remove the old screen protector.",
+                  "photo":"https://guide-images.cdn.ifixit.com/igi/HMl1wZuRcOM3TQVd.200x150"
+                },
+                {
+                  "description":"Hold the replacement screen protector with its liner pull tab facing down. Keep the film facing down to prevent dust from settling onto the sticky side. Peel and fully remove the protective liner from the underside of the protector.",
+                  "photo":"https://guide-images.cdn.ifixit.com/igi/QbUsyI4eKIuHfaQD.large"
+                },
+                {
+                  "description":"Apply the screen protector",
+                  "photo":"https://guide-images.cdn.ifixit.com/igi/mMekkvtTulcmVrwJ.large"
+                }
+              ]
+            }
+          ],
+          "keywords": ["temper glass", "temper replacement", "screen protector", "protector","guard"],
+          "complexity": 1,
+          "cost": 2,
+          "time": 2,
+          "availability": 1
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "brand": "Samsung",
+      "model": "Galaxy A01",
+      "age": 2,
+      "problems": [
+        {
+          "problem_description": "Samsung Galaxy Not Charging",
+          "solutions": [
+            {
+              "description": "Power Source Too Weak",
+              "steps": [
+                {
+                  "description": "Use a compatible charger. The amount of power the charger can output is strongly related to the rate a device can charge. Look for text on the wall block. Flip to whichever side has electrical data and look for key information.",
+                  "photo": "https://example.com/images/samsung_overheat_step1.jpg",
+                  "video": null
+                }
+              ]
+            },
+            {
+              "description": "Debris in the Charge Port",
+              "steps": [
+                {
+                  "description": "Inspect your charge port. Use a flashlight to improve visibility.",
+                  "photo": "https://example.com/images/samsung_update.jpg",
+                  "video": null
+                },
+                {
+                  "description":"Check the fit of your cable. Does the USB-C or micro USB plug sit flush with the bottom of the phone? It should. If it's loose, or only charges when you wiggle the cable, start with a cleaning.",
+                  "photo": null,
+                  "video": null
+                },
+                {
+                  "description":"If there is debris in the port, use the custom cotton swab method or other non conductive probe to clear it out. You may need to shave down the toothpick for your custom swab so it fits into the port.",
+                  "photo":null,
+                  "video":null
+                },
+                {
+                  "description":"Blowing compressed air into the port can free up any loosened bits.",
+                  "photo":null,
+                  "video":null
+                }
+              ]
+            }
+          ],
+          "keywords": ["not charging", "charging issue", "slow charging", "power","charge"],
+          "complexity": 2,
+          "cost": 2,
+          "time": 2,
+          "availability": 3
+        }
+      ]
+    }  
 ]

@@ -51,9 +51,10 @@ class _FeedbackPageState extends State<FeedbackPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Feedback'),
+        title: const Text('Feedback', style: TextStyle(
+            color: Colors.white,)),
         backgroundColor: Colors.deepPurple.shade800,
-        centerTitle: true,
+        iconTheme:  const IconThemeData(color: Colors.white),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

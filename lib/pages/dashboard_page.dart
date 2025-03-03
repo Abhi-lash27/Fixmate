@@ -56,7 +56,6 @@ class _DashboardPageState extends State<DashboardPage> {
     );
   }
 }
-
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -84,7 +83,8 @@ class _HomePageState extends State<HomePage> {
 
       Map<String, String> brandLogos = {};
       for (var item in jsonData) {
-        brandLogos[item['brand']] = 'https://example.com/logos/${item['brand'].toLowerCase()}.png';
+        String brand = item['brand'];
+        brandLogos[brand] = 'assets/images/${brand.toLowerCase()}.png';
       }
 
       setState(() {
@@ -121,6 +121,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('Home', style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.deepPurple.shade800,
       ),
@@ -176,7 +177,7 @@ class _HomePageState extends State<HomePage> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Image.network(
+                                Image.asset(
                                   filteredBrands[index]['logo'],
                                   height: 80,
                                   errorBuilder: (context, error, stackTrace) => const Icon(Icons.image_not_supported, size: 80),

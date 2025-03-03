@@ -1,8 +1,7 @@
 import 'dart:convert';
-import 'package:fixmate/pages/device_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
-
+import 'device_detail_page.dart'; // Ensure correct import
 
 class DeviceListPage extends StatefulWidget {
   final String brandName;
@@ -33,7 +32,10 @@ class _DeviceListPageState extends State<DeviceListPage> {
         devices = jsonData
             .where((device) => device['brand'] == widget.brandName)
             .map((device) => {
+                  'brand': device['brand'],
                   'name': device['model'],
+                  'age': device['age'],
+                  'problems': device['problems'] ?? [],
                   'image': device['image'] ?? 'https://example.com/default_device.png',
                 })
             .toList();
@@ -52,6 +54,7 @@ class _DeviceListPageState extends State<DeviceListPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.brandName, style: const TextStyle(color: Colors.white)),
+        iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: Colors.deepPurple.shade800,
       ),
       body: _isLoading
@@ -73,7 +76,7 @@ class _DeviceListPageState extends State<DeviceListPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => DeviceDetailPage(device: devices[index]['name']),
+                            builder: (context) => DeviceDetailPage(deviceData: devices[index]),
                           ),
                         );
                       },
