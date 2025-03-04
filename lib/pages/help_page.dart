@@ -1,3 +1,4 @@
+import 'package:fixmate/pages/chatbot.dart';
 import 'package:fixmate/pages/community_forum_page.dart';
 import 'package:fixmate/pages/faq_page.dart';
 import 'package:fixmate/pages/feedback_page.dart';
@@ -66,8 +67,7 @@ class HelpPage extends StatelessWidget {
                 // Navigate to service center page (to be implemented)
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => ServiceCenterPage()),
+                  MaterialPageRoute(builder: (context) => ServiceCenterPage()),
                 );
               },
             ),
@@ -98,7 +98,10 @@ class HelpPage extends StatelessWidget {
           color: Colors.white,
         ),
         onPressed: () {
-          // Navigate to chatbot page or open chatbot (to be implemented)
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const ChatBotPage()),
+          );
         },
       ),
     );

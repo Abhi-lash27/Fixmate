@@ -10,44 +10,34 @@ class AnimatedSplashScreen extends StatefulWidget {
 class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late Animation<double> _logoOpacity;
-  late Animation<Offset> _logoPosition;
+  late Animation<double> _textSizeAnimation;
   late Animation<double> _textOpacity;
-  late Animation<Offset> _textPosition;
 
   @override
   void initState() {
     super.initState();
 
-    // Animation Controller for managing the timing and duration
+    // Animation Controller for timing
     _controller = AnimationController(
-      duration: const Duration(seconds: 6),
+      duration: const Duration(seconds: 3),
       vsync: this,
     );
 
-    // Logo fade-in and slide-right animation
-    _logoOpacity = Tween<double>(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeIn),
+    // Text Zoom-Out Animation
+    _textSizeAnimation = Tween<double>(begin: 100, end: 36).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeOut),
     );
 
-    _logoPosition = Tween<Offset>(begin: Offset.zero, end: const Offset(2.0, 0.0)).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeIn),
-    );
-
-    // Text fade-in and slide-right animation (for the app name)
+    // Fade-in Animation
     _textOpacity = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeIn),
     );
 
-    _textPosition = Tween<Offset>(begin: const Offset(0.0, 0.0), end: const Offset(2.0, 0.0)).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeIn),
-    );
-
-    // Start the animation when the screen is loaded
+    // Start animation
     _controller.forward();
 
-    // Navigate to Features Tour page after 5 seconds
-    Future.delayed(const Duration(seconds: 5), () {
+    // Navigate to Features Tour page after animation
+    Future.delayed(const Duration(seconds: 3), () {
       Navigator.pushReplacementNamed(context, '/features-tour');
     });
   }
@@ -63,38 +53,21 @@ class _AnimatedSplashScreenState extends State<AnimatedSplashScreen>
     return Scaffold(
       backgroundColor: Colors.deepPurple.shade800,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            // Logo Animation
-            SlideTransition(
-              position: _logoPosition,
-              child: FadeTransition(
-                opacity: _logoOpacity,
-                child: Image.asset(
-                  'assets/images/logo.png',  // Replace with your logo image
-                  width: 150,
-                  height: 150,
+        child: FadeTransition(
+          opacity: _textOpacity,
+          child: AnimatedBuilder(
+            animation: _textSizeAnimation,
+            builder: (context, child) {
+              return Text(
+                'Fixmate', // Your app name
+                style: TextStyle(
+                  fontSize: _textSizeAnimation.value,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
                 ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            // App Name Animation
-            SlideTransition(
-              position: _textPosition,
-              child: FadeTransition(
-                opacity: _textOpacity,
-                child: const Text(
-                  'Fixmate', // Your application name
-                  style: TextStyle(
-                    fontSize: 36,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-            ),
-          ],
+              );
+            },
+          ),
         ),
       ),
     );
