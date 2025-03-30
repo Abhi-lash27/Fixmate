@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  static const String baseUrl = 'http://192.168.55.208:5000/api';
+  static const String baseUrl = 'http://192.168.171.208:5000/api';
 
   /// 🔹 Searches for device repair solutions
   static Future<Map<String, dynamic>?> searchDeviceRepairSolutions(

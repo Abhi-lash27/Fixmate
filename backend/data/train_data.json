@@ -797,8 +797,8 @@
           ],
           "keywords": ["temper glass", "temper replacement", "screen protector", "protector","guard"],
           "complexity": 1,
-          "cost": 2,
-          "time": 2,
+          "cost": 1,
+          "time": 1,
           "availability": 1
         }
       ]
@@ -853,6 +853,69 @@
           "cost": 2,
           "time": 2,
           "availability": 3
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "brand": "Samsung",
+      "model": "Galaxy J7",
+      "age": 2,
+      "problems": [
+        {
+          "problem_description": "Earpiece Speaker Replacement",
+          "solutions": [
+            {
+              "description": "Speaker is not working",
+              "steps": [
+                {
+                  "description": "Insert a Jimmy tool under one of the corners of the display and gently raise the display.",
+                  "photo": "https://guide-images.cdn.ifixit.com/igi/SWCCYVMaPDJeHSMr.medium",
+                  "video": null
+                },
+                {
+                  "description":"Gently slide the Jimmy tool around the entire perimeter of the phone.",
+                  "photo": "https://guide-images.cdn.ifixit.com/igi/lfWslMk4m1X5ADif.medium",
+                  "video": null
+                },
+                {
+                  "description":"Carefully lift the display to remove it. Be extra careful with the display's ribbon cables. They are fragile.",
+                  "photo":"https://guide-images.cdn.ifixit.com/igi/V6syNQqjG3fmieew.large",
+                  "video":null
+                },
+                {
+                  "description":"Locate the socket of the home button. Fit the metal spudger in between the socket and the home button.",
+                  "photo":"https://guide-images.cdn.ifixit.com/igi/B4TW1EdEWSfmhf1N.large",
+                  "video":null
+                },
+                {
+                  "description":"Take the metal spudger and slide it underneath the home button. Lift up until the home button is removed from its socket.",
+                  "photo":"https://guide-images.cdn.ifixit.com/igi/stJgs6mIjwhfkmDA.large"
+                },
+                {
+                  "description":"Remove fourteen screws from the midframe using a Phillips #00 screwdriver.",
+                  "photo":"https://guide-images.cdn.ifixit.com/igi/lEoiqjyZoNOeLeWM.large"
+                },
+                {
+                  "description":"Flip the phone to the back side where the battery was removed. Apply pressure with your hands to pop the midframe off.",
+                  "photo":"https://guide-images.cdn.ifixit.com/igi/ipB1URcRfQRSHiq6.large"
+                },
+                {
+                  "description":"Place a few iFixit opening picks beneath the motherboard. Lift the motherboard using the iFixit opening picks.",
+                  "photo":"https://guide-images.cdn.ifixit.com/igi/1hYHhghxlBnttQAR.large"
+                },
+                {
+                  "description":"Use the tweezers to remove the back of the earpiece speaker.",
+                  "photo":"https://guide-images.cdn.ifixit.com/igi/j25csxDAWOkhkn4g.large"
+                }
+              ]
+            }
+          ],
+          "keywords": ["speaker issue", "no sound", "hearing", "not hearing"],
+          "complexity": 9,
+          "cost": 6,
+          "time": 10,
+          "availability": 8
         }
       ]
     }  
